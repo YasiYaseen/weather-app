@@ -1,12 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <script  src="script.js"></script>
+    <section class="weather">
+        <div class="w-wrapper">
+            <div class="search-wrapper">
+                <input type="text" id="inp-city">
+                <div class="search-icon"><img src="img/search (1).png" alt=""></div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-lg-4 d-flex">
+                    <div class="current-box ">
+                        <div class="temp"><span id="current-temp">23</span><sup class="deg-far">°C</sup>
+                            <img id="current-img" src="//cdn.weatherapi.com/weather/64x64/night/143.png" alt="icon"> </div>
+                                <div class="mb-3"><h3 id="current-text" >Partly cloudy</h3></div>
+                        <div class="d-flex"><span id="location" >Calicut</span>&nbsp;,&nbsp; <span id="country" >India</span></div>
+                        <div class="mb-3" id="dateTime" >24/12/2023, 06:56:18</div>
+                        <div class="d-flex"> <small>Humidity &nbsp;:&nbsp; </small><span id="humidity" > 63 %</span></div>
+                        <div class="d-flex"> <small>Feels Like &nbsp;:&nbsp;</small><span id="feelsLike"> 20 °C</span></div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-center">
+                    <div class="giphy ">
+                        <img class="img-fluid" src="https://media1.giphy.com/media/hU0W7XUiAauRoQ7XHK/giphy.gif?cid=5a101589oekfpimxoanawioo6ovle21ek7a2ucq7swosxwdi&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="glassy-card">
+                        <span>weekly Forecast</span>
+                        <hr>
+                        <div class="forecast-content">
+                            <div class="d-flex"><span class="day">thursday</span> <img
+                                    src="//cdn.weatherapi.com/weather/64x64/day/176.png" alt=""> <span>20 °C</span>
+                                <span>32 °C</span></div>
+                            <div class="d-flex"><span class="day">friday</span> <img
+                                    src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt=""> <span>20 °C</span>
+                                <span>32 °C</span></div>
+                            <div class="d-flex"><span class="day">saturday</span> <img
+                                    src="//cdn.weatherapi.com/weather/64x64/day/176.png" alt=""> <span>20 °C</span>
+                                <span>32 °C</span></div>
+                            <div class="d-flex"><span class="day">sunday</span> <img
+                                    src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt=""> <span>20 °C</span>
+                                <span>32 °C</span></div>
+                            <div class="d-flex"><span class="day">monday</span> <img
+                                    src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt=""> <span>20 °C</span>
+                                <span>32 °C</span></div>
+                            <div class="d-flex"><span class="day">tuesday</span> <img
+                                    src="//cdn.weatherapi.com/weather/64x64/day/176.png" alt=""> <span>20 °C</span>
+                                <span>32 °C</span></div>
+                            <div class="d-flex"><span class="day">wednesday</span> <img
+                                    src="//cdn.weatherapi.com/weather/64x64/day/176.png" alt=""> <span>20 °C</span>
+                                <span>32 °C</span></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

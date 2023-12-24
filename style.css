@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    color: #fff;
+}
+hr {
+    margin: 0.5rem 0;
+}
+.weather{
+    height: 100vh;
+    width: 100%;
+    padding: 30px 50px;
+    background-color: aqua;
+    background-image: url('img/weather-img-2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.w-wrapper{
+    width: 100%;
+    height: 100%;
+    padding: 2em 5em;
+    -webkit-backdrop-filter: blur(9px);  /* Safari 9+ */
+    backdrop-filter: blur(9px); /* Chrome and Opera */
+    box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
+    background-color: rgb(228 228 228 / 15%); 
+    /* background-image: url('weather-img-1.jpg'); */
+}
+.search-wrapper{
+    width: 15em;
+    position: relative;
+
+    left: -2em;
+}
+.search-wrapper input{
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: unset;
+    background-clip: padding-box;
+    /* border: var(--bs-border-width) solid var(--bs-border-color); */
+    border: 1px solid rgb(228 228 228 / 15%);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.search-wrapper input:focus-visible{
+    border: 1px solid rgba(228, 228, 228, 0.432);
+    outline: none;
+}
+.current-box{
+    align-self:center;
+    /* margin-bottom: 100px; */
+}
+.current-box .temp{
+    font-size: 4.7em;
+    font-weight: 700;
+    color: white;
+}
+.current-box .deg-far{
+    font-size: .45em;
+    top: -.9em;;
+    
+}
+.glassy-card{
+    padding: 1.5em 1em;
+    -webkit-backdrop-filter: blur(10px);  /* Safari 9+ */
+    backdrop-filter: blur(10px); /* Chrome and Opera */
+    box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
+    background-color: rgb(228 228 228 / 15%); 
+}
+.forecast-content>.d-flex{
+    justify-content: space-between;
+    align-items: center;
+}
+.forecast-content img{
+    width: 54px;
+}
+.forecast-content .day {
+    flex-basis: 85px;
+}
+.search-icon{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.giphy{
+    width: 100%;
+}
