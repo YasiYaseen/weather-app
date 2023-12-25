@@ -13,10 +13,22 @@
 <body>
     <section class="weather">
         <div class="w-wrapper">
-            <div class="search-wrapper">
-                <input type="text" id="inp-city">
-                <div class="search-icon"><img src="img/search (1).png" alt=""></div>
+            <div class="top-wrapper">
+                <div class="search-wrapper">
+                    <input type="text" id="inp-city">
+                    <div class="search-icon"><img src="img/search (1).png" alt=""></div>
+                </div>
+
+                <div class="toggle">
+                    <input class="sr-only" type="checkbox" id="a" />
+                    <label for="a">
+                        <span class="sr-only">Toggle Switch</span>
+                        <span class="on-text">C</span>
+                        <span class="off-text">F</span>
+                    </label>
+                </div>
             </div>
+
             <div class="row justify-content-between">
                 <div class="col-lg-4 d-flex">
                     <div class="current-box ">

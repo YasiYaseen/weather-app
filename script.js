@@ -31,9 +31,16 @@ try {
 const searchWeather =async()=>{
    try {
       const city = inpcity.value;
-    const result =await fetchWeather(city);
+      let result;
+      if(city ==""){
+         result =await fetchWeather("calicut");
+      }else{
+         result =await fetchWeather(city);
+      }
+   
     resultvar = result;
     setResult(result,"f");
+    addgiphy(result.current.condition.text);
     console.log(result)
    } catch (error) {
     console.log(error.message);
@@ -58,12 +65,12 @@ const setResult = async(result,corf)=>{
     clocation.innerHTML=result.location.name;
     country.innerHTML=result.location.country;
     dateTime.innerHTML=result.location.localtime;
-    humidity.innerHTML=result.current.humidity;
+    humidity.innerHTML=result.current.humidity+" %";
     
    const forecast=result.forecast.forecastday;
 
     createForecastChildren(forecast,corf);
-    addgiphy(result.current.condition.text);
+    
 
 }
 const createForecastChildren = (forecast,corf)=>{
@@ -108,10 +115,10 @@ forecast.forEach((weekday) => {
 });
 }
 const addgiphy=async (text)=>{
-    const checkingResponse = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=G1s4N2o4hPyrNvLZxTc2trQ3kI3X0iNx&q=${text}&limit=1&offset=0&rating=g&lang=en&bundle=messaging_non_clips`);
-    const parsedchecking =await checkingResponse.json();
-    const totalgiphs =parsedchecking.pagination.total_count;
-    const offset =Math.floor(Math.random()*totalgiphs) ;
+    // const checkingResponse = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=G1s4N2o4hPyrNvLZxTc2trQ3kI3X0iNx&q=${text}&limit=1&offset=0&rating=g&lang=en&bundle=messaging_non_clips`);
+    // const parsedchecking =await checkingResponse.json();
+    // const totalgiphs =parsedchecking.pagination.total_count;
+    const offset =Math.floor(Math.random()*10) ;
     const imageresponse = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=G1s4N2o4hPyrNvLZxTc2trQ3kI3X0iNx&q=${text}&limit=1&offset=${offset}&rating=g&lang=en&bundle=messaging_non_clips`);
     const parsedresponse =await imageresponse.json();
    
@@ -119,7 +126,7 @@ const addgiphy=async (text)=>{
     console.log(parsedresponse);
 }
 
-
+searchWeather();
 inpcity.addEventListener('keydown',(e)=>{
     if(e.key === 'Enter'){
 
