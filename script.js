@@ -10,6 +10,7 @@ const degfar =document.querySelector('.deg-far');
 const inpcity = document.getElementById('inp-city');
 const currentImg =document.getElementById('current-img');
 const giphy=document.getElementById('giphy');
+const corftoggle =document.getElementById('corftoggle');
 
 let resultvar;
 
@@ -37,9 +38,9 @@ const searchWeather =async()=>{
       }else{
          result =await fetchWeather(city);
       }
-   
+  
     resultvar = result;
-    setResult(result,"f");
+    setResult(result);
     addgiphy(result.current.condition.text);
     console.log(result)
    } catch (error) {
@@ -49,8 +50,9 @@ const searchWeather =async()=>{
 
 
 }
-const setResult = async(result,corf)=>{
-    if(corf=="c"){
+const setResult = async(result)=>{
+ 
+    if(corftoggle.checked){
         currentTemp.innerText =result.current.temp_c;
         degfar.innerHTML="°C";
  feelsLike.innerHTML=result.current.feelslike_c+" °C";
@@ -69,11 +71,11 @@ const setResult = async(result,corf)=>{
     
    const forecast=result.forecast.forecastday;
 
-    createForecastChildren(forecast,corf);
+    createForecastChildren(forecast);
     
 
 }
-const createForecastChildren = (forecast,corf)=>{
+const createForecastChildren = (forecast)=>{
     const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 while(forecastdiv.firstChild){
     forecastdiv.firstChild.remove();
@@ -93,7 +95,7 @@ forecast.forEach((weekday) => {
   fdiv.appendChild(dayspan);
   iconImg.src=weekday.day.condition.icon;
   fdiv.appendChild(iconImg);
-  if(corf=="c"){
+  if(corftoggle.checked){
     mintempspan.innerHTML=weekday.day.mintemp_c+" °C";
   }else{
     mintempspan.innerHTML=weekday.day.mintemp_f+" °F";
@@ -101,7 +103,7 @@ forecast.forEach((weekday) => {
   }
   fdiv.appendChild(mintempspan);
 
-  if(corf=="c"){
+  if(corftoggle.checked){
     maxtempspan.innerHTML=weekday.day.maxtemp_c+" °C";
   }else{
     maxtempspan.innerHTML=weekday.day.maxtemp_f+" °F";
@@ -133,3 +135,11 @@ inpcity.addEventListener('keydown',(e)=>{
         searchWeather();
     }
 });
+corftoggle.addEventListener('change',()=>{
+
+  if(resultvar !=null){
+    setResult(resultvar);
+  }else{
+    searchWeather();
+  }
+})
